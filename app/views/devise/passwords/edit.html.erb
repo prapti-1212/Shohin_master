@@ -1,0 +1,30 @@
+<div class="change-password-page">
+  <!-- Change Password Form Container -->
+  <div class="change-password-container">
+    <h2>Change Your Password</h2>
+        <%= render 'layouts/error_messages', object: resource %>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, id: 'change-password-form' }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="field">
+        <%= f.label :password, "New Password" %><br />
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "input-field" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm New Password" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Change My Password", id: "change-password-submit", class: "btn-submit" %>
+      </div>
+    <% end %>
+    <div class="devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+<%# <%= javascript_include_tag 'change_password', 'data-turbo-track': 'reload' %>
+

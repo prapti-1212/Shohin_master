@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main Container */
+.signup-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 0 5%;
+}
+
+/* Left Section (For Image + Welcome Text) */
+.signup-page .left-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-page .left-section h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.signup-page .left-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.signup-page .left-section img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Right Section (Signup Form) */
+.signup-page .right-section {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-page .signup-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.signup-page .signup-container:hover {
+  transform: scale(1.02);
+}
+
+.signup-page h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Field Styling */
+.signup-page .field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.signup-page .field label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.signup-page .field input {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(54, 137, 204, 0.1);
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup-page .field input:focus {
+  background: rgba(72, 147, 197, 0.3);
+  border-color: #6f99d1;
+  color: #000;
+}
+
+/* Submit Button */
+.signup-page .actions {
+  margin-top: 20px;
+}
+
+.signup-page .actions input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient( #0e4bf3, #0e50a7);
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signup-page .actions input[type="submit"]:hover {
+  background: linear-gradient(135deg, #0457f0,#1fe9e9);
+  transform: scale(1.05);
+}
+
+/* Devise Links */
+.signup-page .devise-links {
+  margin-top: 18px;
+}
+
+.signup-page .devise-links a {
+  color: #551A8B;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.signup-page .devise-links a:hover {
+  text-decoration: underline;
+}
+
+/* Error Messages Styling */
+.signup-page .error-messages {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.signup-page .error-messages ul {
+  list-style: none;
+}
+
+.signup-page .error-messages li {
+  font-size: 14px;
+}
+
+/* ================== Mobile Responsiveness ================== */
+@media screen and (max-width: 1024px) {
+  .signup-page {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .signup-page .left-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .signup-page .left-section h1 {
+    font-size: 28px;
+  }
+
+  .signup-page .left-section p {
+    font-size: 16px;
+  }
+
+  .signup-page .left-section img {
+    max-width: 60%;
+  }
+
+  .signup-page .right-section {
+    width: 100%;
+  }
+
+  .signup-page .signup-container {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signup-page .left-section h1 {
+    font-size: 24px;
+  }
+
+  .signup-page .left-section p {
+    font-size: 14px;
+  }
+
+  .signup-page .left-section img {
+    max-width: 80%;
+  }
+
+  .signup-page .signup-container {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signup-page {
+    padding: 10px;
+  }
+
+  .signup-page .left-section img {
+    max-width: 90%;
+  }
+
+  .signup-page .signup-container {
+    max-width: 90%;
+  }
+
+  .signup-page .left-section h1 {
+    font-size: 22px;
+  }
+
+  .signup-page .left-section p {
+    font-size: 13px;
+  }
+}

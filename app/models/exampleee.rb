@@ -1,0 +1,2 @@
+class Exampleee < ApplicationRecord
+end

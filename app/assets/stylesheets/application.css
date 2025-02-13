@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+ /* _error.html.erb file CSS */
+ #error_explanation {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Red border */
+    color: #721c24; /* Dark red text */
+  }
+  
+  #error_explanation .alert {
+    padding: 5px 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  #error_explanation .close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #721c24;
+    cursor: pointer;
+    float: right;
+  }
+  
+  #error_explanation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  
+  #error_explanation li {
+    font-size: 13px;
+    padding: 5px 0;
+    color: #721c24;
+  }
+  

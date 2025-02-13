@@ -1,0 +1,53 @@
+<div class="signup-page">
+  <!-- Left Section for Image -->
+  <div class="left-section">
+    <h1>Welcome on Board</h1>
+    <p>Sign up to join our platform and access amazing features.</p>
+    <img src="<%= asset_path('signup.gif') %>" alt="Signup Image" class="welcome-image">
+  </div>
+  <!-- Right Section for Signup Form -->
+  <div class="right-section">
+    <div class="signup-container">
+      <h2>Sign Up</h2>
+      <%= render 'layouts/error_messages', object: resource %>
+      <%# <% if resource.errors.any? %>
+      <%# <div class="form-errors">
+          <ul>
+            <% resource.errors.full_messages.each do |message| %>
+        <%# <li><%= message</li> %>
+        <%# <% end %>
+        <%# </ul> %>
+        <%# </div> %>
+        <%# <% end %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "signup-form", onsubmit: "return validateForm()" }) do |f| %>
+          <div class="field">
+            <%= f.label :firstname, "First Name" %>
+            <%= f.text_field :firstname, autofocus: true, id: "firstname", placeholder: "Enter your first name", class: "input-field" %>
+          </div>
+          <div class="field">
+            <%= f.label :lastname, "Last Name" %>
+            <%= f.text_field :lastname, id: "lastname", placeholder: "Enter your last name", class: "input-field" %>
+          </div>
+          <div class="field">
+            <%= f.label :email, "Email Address" %>
+            <%= f.email_field :email, autocomplete: "email", id: "email", placeholder: "Enter your email", class: "input-field" %>
+          </div>
+          <div class="field">
+            <%= f.label :password, "Password" %>
+            <%= f.password_field :password, autocomplete: "new-password", id: "password", placeholder: "Create a password", class: "input-field" %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, "Confirm Password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "confirm_password", placeholder: "Re-enter your password", class: "input-field" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Sign Up", id: "signup-submit", class: "btn-signup" %>
+          </div>
+        <% end %>
+        <div class="devise-links">
+          <p>Already have an account? <%= link_to "Login", new_session_path(resource_name), class: "login-link" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= javascript_include_tag 'signup', 'data-turbo-track': 'reload' %>
