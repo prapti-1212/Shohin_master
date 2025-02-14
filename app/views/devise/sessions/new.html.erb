@@ -12,8 +12,6 @@
       <h2>Log in</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "login-form", onsubmit: "return validateForm()" }) do |f| %>
         <div class="field">
-                      <%= render 'layouts/error_messages', object: resource %>
-
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email" %>
         </div>
